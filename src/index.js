@@ -8,6 +8,9 @@ app.use(express.json())
 const PORT = 3000;
 
 app.post('/usr', async (req, res) => {
+    console.log("Checked Auth Here")
+
+
     const {email, password} = req.body
 
     const isDuplicate = await prisma.user.findFirst({
